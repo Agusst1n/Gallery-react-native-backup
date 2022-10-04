@@ -1,12 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import tw from "twrnc";
+import Main from "./src/components/Main";
+import { ImagesProvider } from "./src/context/ImagesContext";
 
 export default function App() {
   return (
-    <View style={tw`h-full bg-blue-100 w-full justify-center items-center`}>
-      <Text style={tw`pt-6 bg-white`}>App Ready para usar :)</Text>
-      <StatusBar style="light" />
+    <View style={tw`h-full bg-slate-900 w-full justify-center items-center`}>
+      <ImagesProvider>
+        <Main />
+        <StatusBar style="light" />
+      </ImagesProvider>
     </View>
   );
 }
